@@ -4,11 +4,12 @@ import time
 
 sub_string = "citation needed"
 url = "https://en.wikipedia.org/wiki/History_of_Mexico"
+list_with_citation = []
+
 
 def get_citations_needed_count(url):
 
     res = requests.get(url)
-    list_with_citation = []
     soup = BeautifulSoup(res.content, 'html.parser')
 
     pararaph_list = soup.find_all('p')
@@ -20,7 +21,6 @@ def get_citations_needed_count(url):
 print()
 
 def get_citations_needed_report(url):
-    list_with_citation = []
 
     for paragraph in list_with_citation:
         # print('Original Paragraph \n',paragraph)
